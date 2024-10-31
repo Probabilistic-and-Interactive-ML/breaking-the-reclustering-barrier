@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use our codebase, please cite our paper."
+type: article
+authors:
+- family-names: "Miklautz"
+  given-names: "Lukas"
+- family-names: "Klein"
+  given-names: "Timo"
+- family-names: "Sidak"
+  given-names: "Kevin"
+- family-names: "Tschiatschek"
+  given-names: "Sebastian"
+- family-names: "Plant"
+  given-names: "Claudia"
+title: "Breaking the Reclustering Barrier in Centroid-based Deep Clustering"
+doi:  # TODO: Change
+url: "https://github.com/..." # TODO: Change
+year: 2024
