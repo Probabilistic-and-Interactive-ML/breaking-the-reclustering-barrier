@@ -188,15 +188,15 @@ Results for DEC, IDEC, and DCN with and without BRB using a ResNet18 encoder.
 
 Our code builds on [ClustPy](https://github.com/collinleiber/ClustPy), which provided us with implementations for the clustering algorithms. We modified their code to fit our needs and added the BRB method. For self-labeling we used the [SCAN](https://github.com/wvangansbeke/Unsupervised-Classification/tree/master) repository and applied it to our models. We would like to thank the authors for their work.
 
-<!-- ## Citation
+## Citation
 
 If you use our code or pretrained models for your research, please cite our paper:
 
 ```bibtex
-@article{miklautz2024brb,
-author = {Miklautz, Lukas and Klein, Timo and Sidak, Kevin and Tschiatschek, Sebastian and Plant, Claudia},
-title = {{}},
-url = {}, # TODO: Update
-year = {2024}
+@article{miklautz2024breaking,
+  title={Breaking the Reclustering Barrier in Centroid-based Deep Clustering},
+  author={Miklautz, Lukas and Klein, Timo and Sidak, Kevin and Leiber, Collin and Lang, Thomas and Shkabrii, Andrii and Tschiatschek, Sebastian and Plant, Claudia},
+  journal={arXiv preprint arXiv:2411.02275},
+  year={2024}
 }
-``` -->
+```

@@ -13,6 +13,6 @@ authors:
 - family-names: "Plant"
   given-names: "Claudia"
 title: "Breaking the Reclustering Barrier in Centroid-based Deep Clustering"
-doi:  # TODO: Change
-url: "https://github.com/..." # TODO: Change
+doi:  10.48550/arXiv.2411.02275
+url: "https://github.com/Probabilistic-and-Interactive-ML/breaking-the-reclustering-barrier"
 year: 2024
