@@ -170,7 +170,7 @@ The downloader is flexible and can be configured in multiple ways:
 
 ### Autoencoder results
 
-Results for DEC and IDEC with and without BRB using a Feed Forward Autoencoder. The full results table can be found [here](assets/BRB_DEC_IDEC_results_table.png).
+Results for DEC and IDEC with and without BRB using a Feed Forward Autoencoder. The full results table can be found [here](assets/BRB_autoencoder_results.png).
 
 <p align="center">
     <img src="assets/BRB_DEC_IDEC_relative_improvement_spider.png" alt="AE Results" width="70%"/>
