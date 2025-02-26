@@ -4,6 +4,8 @@ config = {
     "no_pretraining": RunnerArgs(
         command="python train.py",
         workers=1,
+        save_ae=True,
+        overwrite_ae=False,
         experiment=ExperimentArgs(
             wandb_project='"Clustering BRB - Comparison No Pretraining - REPRO"',
             wandb_entity="kevin-sidak-team",
@@ -82,8 +84,6 @@ config = {
         #     recluster=False,
         #     recalculate_centers=False,
         #     reset_momentum=False,
-        #     reset_interpolation_factor=0,
-        #     reset_interval=0,
         #     reset_embedding=False,
         # ),
     )

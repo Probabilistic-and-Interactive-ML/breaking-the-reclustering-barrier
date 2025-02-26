@@ -5,6 +5,7 @@ config = {
         command="python train.py",
         workers=1,
         save_ae=True,
+        overwrite_ae=False,
         experiment=ExperimentArgs(
             wandb_project='"Clustering BRB - Comparison - REPRO"',
             wandb_entity="kevin-sidak-team",
@@ -48,29 +49,29 @@ config = {
         clustering_epochs=400,
         augmented_pretraining=False,
         augmentation_invariance=True,
-        # BRB parameters
         # Configurations for "baselines", "reset_only" and "recluster_only" shown below
-        brb=BRBArgs(
-            subsample_size=10000,
-            reset_weights=True,
-            recluster=True,
-            recalculate_centers=False,
-            reset_momentum=True,
-            reset_interpolation_factor=0.8,
-            reset_interval=20,
-            reset_embedding=False,
-        ),
-        # # reset only
+        # # BRB parameters
         # brb=BRBArgs(
         #     subsample_size=10000,
         #     reset_weights=True,
-        #     recluster=False,
+        #     recluster=True,
         #     recalculate_centers=False,
-        #     reset_momentum=False,
+        #     reset_momentum=True,
         #     reset_interpolation_factor=0.8,
         #     reset_interval=20,
         #     reset_embedding=False,
         # ),
+        # # reset only
+        brb=BRBArgs(
+            subsample_size=10000,
+            reset_weights=True,
+            recluster=False,
+            recalculate_centers=False,
+            reset_momentum=False,
+            reset_interpolation_factor=0.8,
+            reset_interval=20,
+            reset_embedding=False,
+        ),
         # # recluster only
         # brb=BRBArgs(
         #     subsample_size=10000,
@@ -82,15 +83,13 @@ config = {
         #     reset_interval=20,
         #     reset_embedding=False,
         # ),
-        # # Baselines without intervention
+        # Baselines without intervention
         # brb=BRBArgs(
         #     subsample_size=10000,
         #     reset_weights=False,
         #     recluster=False,
         #     recalculate_centers=False,
         #     reset_momentum=False,
-        #     reset_interpolation_factor=0,
-        #     reset_interval=0,
         #     reset_embedding=False,
         # ),
     )
