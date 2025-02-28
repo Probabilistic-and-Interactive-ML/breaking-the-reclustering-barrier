@@ -21,6 +21,13 @@
     <p>BRB: Breaking the Reclustering Barrier</p>
 </h2>
 
+[`Paper`](https://arxiv.org/abs/2411.02275)
+ | [**`Accepted at ICLR 2025`**](https://openreview.net/forum?id=r01fcKhzT5)
+ | [`CIFAR10 Clustering`](https://paperswithcode.com/sota/image-clustering-on-cifar-10?p=breaking-the-reclustering-barrier-in-centroid)
+ | [`CIFAR100-20 Clustering`](https://paperswithcode.com/sota/unsupervised-image-classification-on-cifar-20?p=breaking-the-reclustering-barrier-in-centroid)
+ | [`Pretrained SimCLR Models`](#pretrained-models)
+ | [`Citation`](#citation)
+
 ## Introduction
 
 This is the codebase accompanying our paper on "Breaking the Reclustering Barrier" (BRB). To summarize, BRB prevents early performance plateaus in centroid-based deep clustering by periodically applying a soft reset to the feature encoder with subsequent reclustering. This allows the model to escape local minima and continue learning. We show that BRB significantly improves the performance of centroid-based deep clustering algorithms on various datasets and tasks.
@@ -129,7 +136,7 @@ BRB consists of three components that must be implemented when using it with an 
 2. **Reclustering**  
   An algorithm for clustering the data after the reset. Our code uses k-means for reclustering because the centroid-based algorithms we use are based on k-means. However, this can be replaced with a clustering algorithm that is more suited to the application at hand. In `src/deep/_clustering_utils.py`, we implement the following clustering algorithms: random, k-means, k-means++-init, k-medoids, and expectation maximization.
 3. **Momentum resets**  
-  As last step of BRB, one has to reset the momentum terms for the centroids. Our code is provided [here](https://github.com/timoklein/clustering-plasticity/blob/main/src/deep/brb_reclustering.py#L52-L57).
+  As last step of BRB, one has to reset the momentum terms for the centroids.
 
 Once these components are implemented, one can use BRB with any centroid-based clustering algorithm by periodically applying them.
 
@@ -148,9 +155,9 @@ The data is stored in three DataFrames: pretrain metrics, clustering metrics, an
 
 The downloader is flexible and can be configured in multiple ways:
 
-- [`HYPERPARAMS`](https://github.com/timoklein/clustering-plasticity/blob/b97b24778793ebb66ba1013dc2029b152cd6df03/wandb_downloader.py#L19-L78) is a set containing the hyperparameters that are downloaded with the train metrics. These allow for filtering and aggregating the data later.
-- [`DownloadArgs`](https://github.com/timoklein/clustering-plasticity/blob/b97b24778793ebb66ba1013dc2029b152cd6df03/wandb_downloader.py#L82-L151) is a configuration file that specifies the wandb user, project, and metrics to download. It defaults to the currently logged in user.
-- One can choose to download only runs that satisfy certain critera using the [`FILTERS`](https://github.com/timoklein/clustering-plasticity/blob/b97b24778793ebb66ba1013dc2029b152cd6df03/wandb_downloader.py#L353-L372) set. Details on how to configure these can be found in the downloader script.
+- [`HYPERPARAMS`](https://github.com/Probabilistic-and-Interactive-ML/breaking-the-reclustering-barrier/blob/423b311d6f6f27f7b24090fccce22d386ce877ef/wandb_downloader.py#L19-L78) is a set containing the hyperparameters that are downloaded with the train metrics. These allow for filtering and aggregating the data later.
+- [`DownloadArgs`](https://github.com/Probabilistic-and-Interactive-ML/breaking-the-reclustering-barrier/blob/423b311d6f6f27f7b24090fccce22d386ce877ef/wandb_downloader.py#L82-L122) is a configuration file that specifies the wandb user, project, and metrics to download. It defaults to the currently logged in user.
+- One can choose to download only runs that satisfy certain critera using the [`FILTERS`](https://github.com/Probabilistic-and-Interactive-ML/breaking-the-reclustering-barrier/blob/423b311d6f6f27f7b24090fccce22d386ce877ef/wandb_downloader.py#L353-L372) set. Details on how to configure these can be found in the downloader script.
 
 > [!CAUTION]
 >
@@ -170,7 +177,7 @@ The downloader is flexible and can be configured in multiple ways:
 
 ### Autoencoder results
 
-Results for DEC and IDEC with and without BRB using a Feed Forward Autoencoder. The full results table can be found [here](assets/BRB_DEC_IDEC_results_table.png).
+Results for DEC and IDEC with and without BRB using a Feed Forward Autoencoder. The full results table can be found [here](assets/BRB_autoencoder_results.png).
 
 <p align="center">
     <img src="assets/BRB_DEC_IDEC_relative_improvement_spider.png" alt="AE Results" width="70%"/>
